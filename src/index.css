@@ -1,0 +1,205 @@
+@font-face {
+  font-family: PremierSans;
+  src: url("./assets/Premier Sans.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+ul,
+li,
+a {
+  all: unset;
+}
+
+a:hover {
+  cursor: pointer;
+  color: pink;
+}
+.navbar-home {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+.navbar {
+  background-color: #37003c;
+  color: white;
+  padding: 20px;
+}
+.navbar-links {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  font-size: 1.2rem;
+  font-family: PremierSans, Arial, Helvetica Neue, Helvetica, sans-serif;
+  letter-spacing: 2px;
+}
+.navbar-pages {
+  width: 100%;
+  flex: 1;
+}
+#dream-team {
+  width: 100%;
+  height: 100%;
+}
+#dreamteam-inner {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 100%;
+  justify-content: space-around;
+  padding-bottom: 3rem;
+}
+.make-team {
+  padding-left: 30px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(24, 26, 27);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+#make-team-group {
+  margin: auto;
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+#pitch-group {
+  background-image: linear-gradient(
+    rgba(24, 26, 27, 0) 200px,
+    rgb(24, 26, 27) 320px
+  ),
+  url("https://fantasy.premierleague.com/static/media/pattern-2-crop-184.d7588c45.png"),
+  linear-gradient(to right, rgb(0, 190, 203), rgb(0, 23, 145));
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: 0px center, right top, 0px center;
+}
+.pitch-display {
+  background-image: url("pitch-default.svg");
+  /* background-image: linear-gradient(to right, rgb(0, 255, 135), rgb(2, 239, 255)); */
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  background-position: 50% 0%;
+  width: 700px;
+  height: 730px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#Goalkeepers,
+#Defenders,
+#Midfielders,
+#Forwards {
+  width: 95%;
+  height: 25%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#Goalkeepers {
+  width: 40%;
+}
+#Forwards {
+  width: 65%;
+}
+
+.pl {
+  width: 110px;
+  height: 155px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.player {
+  width: 100%;
+  height: 70%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#close-icon {
+  display: flex;
+  margin-top: 2px;
+  align-items: center;
+  justify-content: center;
+  background-color: #37003c;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+#player-card {
+  display: inline-block;
+  width: 17rem;
+  height: 21rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: white;
+  background-color: #37003ce0;
+  padding-top: 1rem;
+}
+#name-cost-container {
+  width: 100%;
+  height: 25%;
+  color: white;
+  text-align: center;
+  font-size: small;
+}
+#player-name {
+  background-color: #37003c;
+  height: 50%;
+  width: 100%;
+  padding-top: 2px;
+}
+
+#player-cost {
+  background-color: #43403c66;
+  border-radius: 0 0 5px 5px;
+  height: 50%;
+  width: 100%;
+  padding-top: 2px;
+}
+
+#add-button {
+  width: 100%;
+  height: 23%;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 255, 135),
+    rgb(2, 239, 255)
+  );
+  border-radius: 3px;
+  color: #37003c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 15px;
+  font-weight: 700;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-seriff;
+  letter-spacing: 1px;
+}
+
+#player-list {
+  width: 200px;
+  height: 100%;
+  background-color: red;
+  margin-left: 2rem;
+}
+
