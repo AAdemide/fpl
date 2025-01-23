@@ -2,10 +2,10 @@
 - [install node](https://nodejs.org/en/download)
 - clone app with git clone git@github.com:AAdemide/fpl-sandbox.git
 - open 2 terminals sessions
-- in one terminal session cd to client and run npm i
-- in the second terminal session cd to server and run npm i
-- in the server terminal run npm run dev
-- in the client terminal also run npm run dev
+- in one terminal session cd to client and run "npm i"
+- in the second terminal session cd to server and run "npm i"
+- in the server terminal run "npm run dev"
+- in the client terminal also run "npm run dev"
 
 - # App structure
  ![Screenshot 2025-01-22 201652](https://github.com/user-attachments/assets/6a910e65-acf3-4c54-809b-f21fa4183dfa)
