@@ -1,5 +1,5 @@
 //Useful Links:
-  //https://fantasy.premierleague.com/api/element-summary/263/
+//https://fantasy.premierleague.com/api/element-summary/263/
 
 //BUG
 //Problem with data in variables when strict mode on fix
@@ -11,11 +11,12 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import MakeTeam from "./pages/MakeTeam";
+import MakeTeam from "./pages/makeTeam/MakeTeam";
 import DreamTeam from "./pages/DreamTeam";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
+import Loading from "./components/Loading";
 
 export default function App() {
   const [playerData, setPlayerData] = useState({});
@@ -61,7 +62,7 @@ export default function App() {
       };
 
       apSorted = apSorted.concat([player]);
-      ap[`${p.id}`] = player
+      ap[`${p.id}`] = player;
     });
     apSorted.sort((a, b) => b.points - a.points);
   }
@@ -88,9 +89,8 @@ export default function App() {
   }
 
   useEffect(() => {
-    fetch(proxyUrl + apiUrl + fetch_limit)
+    fetch("http://localhost:5000/api")
       .then((res) => {
-        console.log(res)
         return res.json();
       })
       .then((data) => {
@@ -116,39 +116,36 @@ export default function App() {
   }, []);
   return (
     <>
-      <ul>
-        {playerData.allPlayers ? (
-          <BrowserRouter>
-            <Navbar>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route
-                  path="/dreamteam"
-                  element={<DreamTeam dreamTeam={playerData.dreamTeam} />}
-                />
-                <Route
-                  path="/maketeam"
-                  element={
-                    <MakeTeam
-                      allPlayers={playerData.allPlayers}
-                      allPlayersSorted={playerData.allPlayersSorted}
-                      playerPositions={playerData.playerPositions}
-                      playerTeam={playerData.playerTeam}
-                    />
-                  }
-                />
-                {/* <Route path="/login" element={<Login />} /> */}
-              </Routes>
-            </Navbar>
-          </BrowserRouter>
-        ) : (
-         ( ()=>{
-            // console.log(playerData)
-            return (<li> To Hell with this </li>)
-          })()
-          
-        )}
-      </ul>
+      {playerData.allPlayers ? (
+        <BrowserRouter>
+          <Navbar>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/dreamteam"
+                element={<DreamTeam dreamTeam={playerData.dreamTeam} />}
+              />
+              <Route
+                path="/maketeam"
+                element={
+                  <MakeTeam
+                    allPlayers={playerData.allPlayers}
+                    allPlayersSorted={playerData.allPlayersSorted}
+                    playerPositions={playerData.playerPositions}
+                    playerTeam={playerData.playerTeam}
+                  />
+                }
+              />
+              {/* <Route path="/login" element={<Login />} /> */}
+            </Routes>
+          </Navbar>
+        </BrowserRouter>
+      ) : (
+        (() => {
+          // console.log(playerData)
+          return <Loading />;
+        })()
+      )}
     </>
   );
 }

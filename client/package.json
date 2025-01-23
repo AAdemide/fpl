@@ -3,7 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy":"https://fantasy.premierleague.com",
+  "server": {
+    "proxy": {
+      "/api": "http://localhost:5000/api"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

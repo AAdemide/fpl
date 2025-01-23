@@ -1,5 +1,5 @@
 import ReactDom from "react-dom"
-export default function Modal({ open, onClose, successModal }) {
+export default function Modal({ open, onClose, modalFunction, text}) {
     // console.log(onClose)
     const styles = {
         position: 'fixed',
@@ -20,14 +20,15 @@ export default function Modal({ open, onClose, successModal }) {
         zIndex: 1000,
         // overflow: "hidden"
     }
-    if(!open)
-        return null
+
     return (
+        !open ? null : 
         <>
             <div style={OVERLAY_STYLES}/>
             <div style={styles}>
-                <p>Add Player to Team?</p>
-                <button onClick={successModal}>Ok</button>
+                {/* <p>Add Player to Team?</p> */}
+                <p>{text}</p>
+                <button onClick={modalFunction}>Ok</button>
                 <button onClick={onClose}>Cancel</button>
             </div>
         </>)
